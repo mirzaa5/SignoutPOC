@@ -14,7 +14,7 @@ This repository is a **proof of concept (POC)** for a **sign-out** flow in a mic
 |--------|------|
 | API Gateway | Reverse proxy, JWT validation, route to sign-out |
 | Auth Service | Extract token / user, blacklist token in Redis |
-| Redis | Token blacklist (e.g. `SETEX` with TTL to token lifetime) |
+| Redis | Token blacklist |
 
 ## Run with Docker Compose
 

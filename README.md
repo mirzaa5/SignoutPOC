@@ -4,9 +4,9 @@ This repository is a **proof of concept (POC)** for a **sign-out** flow in a mic
 
 ## What it illustrates
 
-- **API Gateway as a reverse proxy** — A .NET YARP–based gateway fronts the system, routes traffic to the auth API, and runs JWT checks before forwarding.
-- **Containerized services** — The **API Gateway**, **Auth Service**, and **Redis** are built as images and run as containers for consistent, portable deployments.
-- **Service orchestration (fundamental)** — **Docker Compose** defines the services, a shared network, and startup order (`depends_on`) so the stack can be started and torn down as one unit for local and demo use.
+- **API Gateway as a reverse proxy**  A .NET YARP–based gateway fronts the system, routes traffic to the auth API, and runs JWT checks before forwarding.
+- **Containerized services**  The **API Gateway**, **Auth Service**, and **Redis** are built as images and run as containers for consistent, portable deployments.
+- **Service orchestration (fundamental)**  **Docker Compose** defines the services, a shared network, and startup order (`depends_on`) so the stack can be started and torn down as one unit for local and demo use.
 
 ## Stack (high level)
 
@@ -28,9 +28,9 @@ The gateway is exposed (by default) on **port 5000**; adjust in `docker-compose.
 
 ## Solution layout
 
-- `ApiGateway` — .NET app with YARP reverse proxy and JWT middleware  
-- `AuthService` — .NET Web API for sign-out and Redis interaction  
-- `docker-compose.yml` — Redis, authservice, and apigateway on a shared bridge network
+- `ApiGateway`  .NET app with YARP reverse proxy and JWT middleware  
+- `AuthService`  .NET Web API for sign-out and Redis interaction  
+- `docker-compose.yml`  Redis, authservice, and apigateway on a shared bridge network
 
 This POC is for learning and design discussion; hardening, auth standards, and operational practices would come in a real product.
 

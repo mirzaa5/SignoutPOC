@@ -25,11 +25,12 @@ namespace AuthService.Controllers
 
             if( string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer", StringComparison.OrdinalIgnoreCase))
             {
-                return  Unauthorized();
+                return  Unauthorized(new { message = "Missing or invalid token"});
             }
             var accessToken = authHeader["Bearer ".Length..].ToString();
             var response  =await _authService.SignOutAsync(accessToken);
-                return response ?  Ok() : StatusCode(500);
+                return response ?  Ok(new {message = "Successfully Signed out"}) 
+                                   : StatusCode(500, new { message = "Sign out failed"});
                 
             
         }

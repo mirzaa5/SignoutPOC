@@ -11,6 +11,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379"));
 builder.Services.AddScoped<IRedisService, RedisService>();
 builder.Services.AddScoped<IAuthService, AuthSignoutService>();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

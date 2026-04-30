@@ -4,9 +4,15 @@ This repository is a **proof of concept (POC)** for a **sign-out** flow in a mic
 
 ## What it illustrates
 
+<<<<<<< HEAD
 - **API Gateway as a reverse proxy** — A .NET YARP–based gateway fronts the system, routes traffic to the auth API, and runs JWT checks before forwarding.
 - **Containerized services** — The **API Gateway**, **Auth Service**, and **Redis** are built as images and run as containers for consistent, portable deployments.
 - **Service orchestration (fundamental)** — **Docker Compose** defines the services, a shared network, and startup order (`depends_on`) so the stack can be started and torn down as one unit for local and demo use.
+=======
+- **API Gateway as a reverse proxy**  A .NET YARP–based gateway fronts the system, routes traffic to the auth API, and runs JWT checks before forwarding.
+- **Containerized services**  The **API Gateway**, **Auth Service**, and **Redis** are built as images and run as containers for consistent, portable deployments.
+- **Service orchestration (fundamental)**  **Docker Compose** defines the services, a shared network, and startup order (`depends_on`) so the stack can be started and torn down as one unit for local and demo use.
+>>>>>>> 9bbc0dee733632e5e610e652cbe7c70de1901c9e
 
 ## Stack (high level)
 
@@ -14,7 +20,11 @@ This repository is a **proof of concept (POC)** for a **sign-out** flow in a mic
 |--------|------|
 | API Gateway | Reverse proxy, JWT validation, route to sign-out |
 | Auth Service | Extract token / user, blacklist token in Redis |
+<<<<<<< HEAD
 | Redis | Token blacklist (e.g. `SETEX` with TTL to token lifetime) |
+=======
+| Redis | Token blacklist |
+>>>>>>> 9bbc0dee733632e5e610e652cbe7c70de1901c9e
 
 ## Run with Docker Compose
 
@@ -28,8 +38,18 @@ The gateway is exposed (by default) on **port 5000**; adjust in `docker-compose.
 
 ## Solution layout
 
+<<<<<<< HEAD
 - `ApiGateway` — .NET app with YARP reverse proxy and JWT middleware  
 - `AuthService` — .NET Web API for sign-out and Redis interaction  
 - `docker-compose.yml` — Redis, authservice, and apigateway on a shared bridge network
 
 This POC is for learning and design discussion; hardening, auth standards, and operational practices would come in a real product.
+=======
+- `ApiGateway`  .NET app with YARP reverse proxy and JWT middleware  
+- `AuthService`  .NET Web API for sign-out and Redis interaction  
+- `docker-compose.yml`  Redis, authservice, and apigateway on a shared bridge network
+
+This POC is for learning and design discussion; hardening, auth standards, and operational practices would come in a real product.
+
+<img width="1638" height="1025" alt="image" src="https://github.com/user-attachments/assets/81ef3771-d622-4642-9e8b-37b7b0ad6e54" />
+>>>>>>> 9bbc0dee733632e5e610e652cbe7c70de1901c9e
